@@ -68,32 +68,36 @@
                 </button>
             </div>
 
-           <!-- Enhanced Contact Section -->
+<!-- Single-Liner Contact Section -->
             <div class="mt-8 border-t border-gray-300 pt-6">
                 <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Let's Connect</h4>
-                <div class="flex justify-center items-center gap-6">
+                
+                <!-- Flex container for the one-liner -->
+                <div class="inline-flex flex-wrap justify-center items-center gap-4 md:gap-6 bg-white border border-gray-200 px-6 py-3 rounded-full shadow-sm">
                     
-                    <!-- Interactive Contact Toggle (Prevents App Popups) -->
-                    <div class="contact-wrapper">
-                        <button class="flex items-center gap-2 text-gray-600 hover:text-gray-900 bg-white hover:bg-gray-50 border border-gray-200 px-5 py-2.5 rounded-full shadow-sm transition-all duration-300 font-medium animate-float" onclick="toggleContactInfo()">
-                            <i class="fas fa-address-book text-xl text-blue-600"></i> Contact Details
-                        </button>
-                        
-                        <div id="contact-dropdown" class="contact-dropdown text-left">
-                            <div class="contact-item">
-                                <span class="flex items-center"><i class="fas fa-envelope mr-3 text-gray-400"></i>macapagaozed@gmail.com</span>
-                                <button class="copy-btn" onclick="copyToClipboard('macapagaozed@gmail.com', this)">Copy</button>
-                            </div>
-                            <div class="contact-item">
-                                <span class="flex items-center"><i class="fas fa-phone mr-3 text-gray-400"></i>09667638927</span>
-                                <button class="copy-btn" onclick="copyToClipboard('09667638927', this)">Copy</button>
-                            </div>
-                        </div>
+                    <!-- Email Inline -->
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-envelope text-blue-500"></i>
+                        <span class="text-gray-700 text-sm font-medium">macapagaozed@gmail.com</span>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded border border-gray-200 transition-colors" onclick="copyToClipboard('macapagaozed@gmail.com', this)">Copy</button>
                     </div>
 
-                    <!-- Facebook (Link is fine here as it goes to a website) -->
-                    <a href="https://www.facebook.com/share/19tnQhVcMZ/" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors duration-300 animate-float" style="animation-delay: 0.2s;" title="Facebook">
-                        <i class="fab fa-facebook text-3xl"></i>
+                    <!-- Vertical Divider -->
+                    <div class="hidden md:block w-px h-5 bg-gray-300"></div>
+
+                    <!-- Phone Inline -->
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-phone text-blue-500"></i>
+                        <span class="text-gray-700 text-sm font-medium">09667638927</span>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded border border-gray-200 transition-colors" onclick="copyToClipboard('09667638927', this)">Copy</button>
+                    </div>
+
+                    <!-- Vertical Divider -->
+                    <div class="hidden md:block w-px h-5 bg-gray-300"></div>
+
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/share/19tnQhVcMZ/" target="_blank" class="text-gray-400 hover:text-blue-600 transition-colors text-xl" title="Facebook">
+                        <i class="fab fa-facebook"></i>
                     </a>
                 </div>
             </div>
