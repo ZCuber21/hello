@@ -179,7 +179,7 @@
         <p class="text-gray-500 text-sm">© 2026 Zed Macapagao. All rights reserved.</p>
     </footer>
 
-    <!-- Interactive Script -->
+   <!-- Interactive Scripts -->
     <script>
         function showPortfolio() {
             document.getElementById('home-view').classList.add('hidden');
@@ -191,6 +191,52 @@
             document.getElementById('portfolio-view').classList.add('hidden');
             document.getElementById('home-view').classList.remove('hidden');
             window.scrollTo(0, 0);
+        }
+
+        function copyToClipboard(text, btnElement) {
+            // Visual feedback function
+            const showSuccess = () => {
+                const originalText = btnElement.innerText;
+                btnElement.innerText = "Copied!";
+                btnElement.style.background = "#d1fae5"; 
+                btnElement.style.color = "#065f46";
+                btnElement.style.borderColor = "#34d399";
+                
+                setTimeout(() => {
+                    btnElement.innerText = originalText;
+                    btnElement.style.background = "";
+                    btnElement.style.color = "";
+                    btnElement.style.borderColor = "";
+                }, 2000);
+            };
+
+            // Modern clipboard API (Works on HTTPS or localhost)
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(showSuccess).catch(err => {
+                    console.error('Clipboard API failed: ', err);
+                });
+            } else {
+                // Fallback method (Works for local 'file://' testing)
+                let textArea = document.createElement("textarea");
+                textArea.value = text;
+                // Prevent scrolling to the bottom of the page
+                textArea.style.position = "fixed";
+                textArea.style.top = "0";
+                textArea.style.left = "0";
+                textArea.style.opacity = "0";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                
+                try {
+                    document.execCommand('copy');
+                    showSuccess();
+                } catch (err) {
+                    console.error('Fallback copy failed: ', err);
+                }
+                
+                document.body.removeChild(textArea);
+            }
         }
     </script>
 </body>
