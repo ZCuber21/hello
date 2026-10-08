@@ -1,0 +1,18 @@
+<div class="contact-wrapper">
+  <!-- The button triggers the JavaScript function instead of a mailto link -->
+  <button class="contact-toggle-btn" onclick="toggleContactInfo()">
+    Get in Touch
+  </button>
+  
+  <!-- This container holds your actual contact details, hidden by default -->
+  <div id="contact-dropdown" class="contact-dropdown">
+    <div class="contact-item">
+      <span>hello@yourdomain.com</span>
+      <button class="copy-btn" onclick="copyToClipboard('hello@yourdomain.com', this)">Copy</button>
+    </div>
+    <div class="contact-item">
+      <span>+1 (555) 123-4567</span>
+      <button class="copy-btn" onclick="copyToClipboard('+15551234567', this)">Copy</button>
+    </div>
+  </div>
+</div>
