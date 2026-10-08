@@ -68,26 +68,35 @@
                 </button>
             </div>
 
-            <!-- New Contact Section -->
+           <!-- Enhanced Contact Section -->
             <div class="mt-8 border-t border-gray-300 pt-6">
                 <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Let's Connect</h4>
-                <div class="flex justify-center gap-6">
-                    <!-- Email -->
-                    <a href="mailto:macapagaozed@gmail.com" class="text-gray-600 hover:text-red-500 transition-colors duration-300 animate-float" style="animation-delay: 0s;" title="Email Me">
-                        <i class="fas fa-envelope text-3xl"></i>
-                    </a>
-                    <!-- Phone -->
-                    <a href="tel:+639667638927" class="text-gray-600 hover:text-green-500 transition-colors duration-300 animate-float" style="animation-delay: 0.2s;" title="Call Me">
-                        <i class="fas fa-phone text-3xl"></i>
-                    </a>
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/share/19tnQhVcMZ/" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors duration-300 animate-float" style="animation-delay: 0.4s;" title="Facebook">
+                <div class="flex justify-center items-center gap-6">
+                    
+                    <!-- Interactive Contact Toggle (Prevents App Popups) -->
+                    <div class="contact-wrapper">
+                        <button class="flex items-center gap-2 text-gray-600 hover:text-gray-900 bg-white hover:bg-gray-50 border border-gray-200 px-5 py-2.5 rounded-full shadow-sm transition-all duration-300 font-medium animate-float" onclick="toggleContactInfo()">
+                            <i class="fas fa-address-book text-xl text-blue-600"></i> Contact Details
+                        </button>
+                        
+                        <div id="contact-dropdown" class="contact-dropdown text-left">
+                            <div class="contact-item">
+                                <span class="flex items-center"><i class="fas fa-envelope mr-3 text-gray-400"></i>macapagaozed@gmail.com</span>
+                                <button class="copy-btn" onclick="copyToClipboard('macapagaozed@gmail.com', this)">Copy</button>
+                            </div>
+                            <div class="contact-item">
+                                <span class="flex items-center"><i class="fas fa-phone mr-3 text-gray-400"></i>09667638927</span>
+                                <button class="copy-btn" onclick="copyToClipboard('09667638927', this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facebook (Link is fine here as it goes to a website) -->
+                    <a href="https://www.facebook.com/share/19tnQhVcMZ/" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors duration-300 animate-float" style="animation-delay: 0.2s;" title="Facebook">
                         <i class="fab fa-facebook text-3xl"></i>
                     </a>
                 </div>
             </div>
-        </div>
-
         <!-- ==================== PORTFOLIO VIEW ==================== -->
         <div id="portfolio-view" class="w-full hidden fade-in py-8">
             
